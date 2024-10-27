@@ -1,4 +1,9 @@
 package com.example.ECommercePlatform.repository;
 
-public class ProductRepository {
+import com.example.ECommercePlatform.entities.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long> {
 }

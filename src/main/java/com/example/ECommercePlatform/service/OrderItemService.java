@@ -1,11 +1,11 @@
 package com.example.ECommercePlatform.service;
 
-import com.example.ECommercePlatform.repository.ReviewRepository;
+import com.example.ECommercePlatform.repository.OrderItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ReviewService {
-    private final ReviewRepository reviewRepository;
+public class OrderItemService {
+    private final OrderItemRepository orderItemRepository;
 }
