@@ -12,7 +12,9 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
+
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,6 +23,7 @@ public class Product {
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
+    @Enumerated(EnumType.STRING)
     private GenderCategory genderCategory;
     private String description;
     private String brand;
@@ -30,6 +33,9 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<ProductImage> productImages;
 
+    @OneToMany(mappedBy = "product")
+    private List<CartItem> cartItems;
 
-
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItems;
 }

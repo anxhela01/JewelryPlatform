@@ -1,26 +1,27 @@
 package com.example.ECommercePlatform.entities;
 
+
 import jakarta.persistence.*;
-import jdk.jfr.Category;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Getter
-@Setter
-public class Review {
+public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private int rating;
-    private String comment;
-    @OneToOne
-    @JoinColumn(name = "user_id")
+
+    @OneToOne(mappedBy = "cart")
     private User user;
 
-
+    @OneToMany(mappedBy = "cart")
+    private List<CartItem> cartItems;
 
 
 }
