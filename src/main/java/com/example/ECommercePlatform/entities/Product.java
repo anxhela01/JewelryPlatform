@@ -14,7 +14,6 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Enumerated(EnumType.STRING)
     private Category category;
     private GenderCategory genderCategory;
     private String description;
